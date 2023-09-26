@@ -93,7 +93,7 @@ class _CardScreenState extends State<CardScreen> {
 
                   Center(
                     child: Text(
-                      'Memory Game',
+                      'Matching Game',
                       style: GoogleFonts.almendra(
                         fontSize: 50.0,
                         color: Colors.red.shade100,

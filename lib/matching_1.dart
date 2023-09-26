@@ -85,7 +85,7 @@ class _CardeeState extends State<Cardee> {
 
                         Center(
                           child: Text(
-                            'Memory Game',
+                            'Matching Game',
                             style: GoogleFonts.almendraDisplay(
                               fontSize: 50.0,
                               fontWeight: FontWeight.bold,

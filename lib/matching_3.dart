@@ -94,7 +94,7 @@ class _MatchingState extends State<Matching> {
 
                   Center(
                     child: Text(
-                        'Memory Game',
+                        'Matching Game',
                         style: GoogleFonts.adamina(
                           fontSize: 50.0,
                           fontWeight: FontWeight.bold,
