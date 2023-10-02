@@ -1,3 +1,5 @@
+import 'package:first_project/easy.dart';
+import 'package:first_project/hard.dart';
 import 'package:first_project/matching_3.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,6 +7,7 @@ import 'package:lottie/lottie.dart';
 
 import 'matching_1.dart';
 import 'matching_2.dart';
+import 'medium.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -118,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 child: Row(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: [Center(child: TextButton(
-                                                    child: Text('Level  1',
+                                                    child: Text('Easy',
                                                     style: GoogleFonts.adamina(
                                                       fontSize: 40.0,
                                                       fontWeight: FontWeight.bold,
@@ -129,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       Navigator.push(context,
 
                                                           MaterialPageRoute(builder: (context){
-                                                            return CardScreen();
+                                                            return Easy();
                                                           }));
                                                     },
                                                   )),
@@ -188,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Row(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [Center(child: TextButton(
-                                            child: Text('Level  2',
+                                            child: Text('Medium',
                                               style: GoogleFonts.adamina(
                                                 fontSize: 40.0,
                                                 fontWeight: FontWeight.bold,
@@ -198,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               Navigator.push(context,
 
                                                   MaterialPageRoute(builder: (context){
-                                                    return Matching();
+                                                    return Medium();
                                                   }));
                                             },
                                           ),
@@ -261,7 +264,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Row(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [Center(child: TextButton(
-                                            child: Text('Level  3',
+                                            child: Text('Hard',
                                               style: GoogleFonts.adamina(
                                                 fontSize: 40.0,
                                                 fontWeight: FontWeight.bold,
@@ -271,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               Navigator.push(context,
 
                                                   MaterialPageRoute(builder: (context){
-                                                     return Cardee();
+                                                     return Hard();
                                                   }));
                                             },
                                           )),

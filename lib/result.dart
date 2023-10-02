@@ -1,4 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:first_project/hard.dart';
 import 'package:first_project/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -113,7 +114,7 @@ class _ResultState extends State<Result> {
                           onPressed:(){
                             Navigator.push(context,
                                 MaterialPageRoute(builder:(context){
-                                  return HomeScreen();
+                                  return Hard();
                                 }));
                           }, child:Text('Close',
                         style: TextStyle(

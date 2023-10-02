@@ -1,24 +1,23 @@
-
 import 'dart:async';
 import 'dart:ui';
 
 import 'package:audioplayers/audioplayers.dart';
-import 'package:first_project/matching_2.dart';
-import 'package:first_project/matching_21.dart';
-import 'package:first_project/result_3.dart';
+import 'package:first_project/result.dart';
+import 'package:first_project/result_11.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'game_3.dart';
+import 'game_11.dart';
+import 'matching_3.dart';
 
-class Matching extends StatefulWidget {
-  const Matching({super.key});
+class Matching11 extends StatefulWidget {
+  const Matching11({super.key});
 
   @override
-  State<Matching> createState() => _MatchingState();
+  State<Matching11> createState() => _Matching11State();
 }
 
-class _MatchingState extends State<Matching> {
+class _Matching11State extends State<Matching11> {
   final Game _game=Game();
   int score=0;
   int tries=0;
@@ -31,10 +30,7 @@ class _MatchingState extends State<Matching> {
     super.initState();
     _game.initGame();
 
-
-
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +40,7 @@ class _MatchingState extends State<Matching> {
         startTimer();
       });
     }
+
     return Scaffold(
       extendBodyBehindAppBar: true,
 
@@ -53,41 +50,33 @@ class _MatchingState extends State<Matching> {
         height: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/flower555.jpeg'),
+                image: AssetImage('assets/images/sea.jpeg'),
                 fit: BoxFit.fill
             )
 
         ),
 
         child:  BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 7,sigmaY: 7),
+          filter: ImageFilter.blur(sigmaX: 2,sigmaY: 2),
           child: Container(
             decoration: BoxDecoration(
                 gradient:LinearGradient(
-                    begin: Alignment.topRight,
+                    begin: Alignment.bottomRight,
                     end: Alignment.bottomLeft,
-                    colors:[
-                      Colors.red.shade100,
-                        Colors.teal.shade800.withOpacity(0.3),
-                        Colors.red.shade200.withOpacity(0.4),
-                      Colors.black26.withOpacity(0.6),
-                      Colors.black26.withOpacity(0.6),
-                      Colors.black26.withOpacity(0.6),
-                      Colors.black26.withOpacity(0.6),
-                      Colors.black26.withOpacity(0.6),
-                      Colors.black26.withOpacity(0.6),
-
-                      Colors.red.shade200.withOpacity(0.4),
-                      Colors.teal.shade800.withOpacity(0.3),
-                      Colors.red.shade100,
+                    colors: [
+                      Colors.blue.shade200.withOpacity(0.4),
+                      Colors.white.withOpacity(0.2),
+                      Colors.white.withOpacity(0.2),
+                      Colors.blue.shade200.withOpacity(0.4),
 
                     ]
                 )
             ),
             child: Padding(
               padding: EdgeInsets.all(20.0),
-              child:  Column(
-                  
+              child: Column(
+                  //crossAxisAlignment: CrossAxisAlignment.center,
+                  //mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
 
 
@@ -95,10 +84,10 @@ class _MatchingState extends State<Matching> {
                     Center(
                       child: Text(
                           'Matching Game',
-                          style: GoogleFonts.adamina(
+                          style: GoogleFonts.amaranth(
                             fontSize: 50.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.red.shade200,
+                            color: Colors.white,
                           )
                       ),
                     ),
@@ -117,15 +106,16 @@ class _MatchingState extends State<Matching> {
                             height: 70.0,
                             width: 40.0,
                             decoration: BoxDecoration(
-                                color: Colors.brown.shade100.withOpacity(0.5),
-                                borderRadius: BorderRadius.circular(30.0),
-                                border:Border.all(color: Colors.tealAccent.shade400.withOpacity(0.25),width: 4.0)
+                                color: Colors.blueGrey.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(20.0),
+                                border:Border.all(color: Colors.tealAccent,width: 3.0)
                             ),
                             child: Column(
                               children: [
                                 Text(
                                   'Score',
                                   style: TextStyle(
+                                    color: Colors.pinkAccent.shade700,
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -138,6 +128,7 @@ class _MatchingState extends State<Matching> {
                                   '$score',
                                   style: TextStyle(
                                     fontSize: 25.0,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.w900,
                                   ),
 
@@ -156,9 +147,9 @@ class _MatchingState extends State<Matching> {
                             height: 70.0,
                             width: 40.0,
                             decoration: BoxDecoration(
-                                color: Colors.brown.shade100.withOpacity(0.5),
-                                borderRadius: BorderRadius.circular(30.0),
-                                border:Border.all(color: Colors.tealAccent.shade400.withOpacity(0.25),width: 4.0)
+                                color: Colors.blueGrey.withOpacity(0.2),
+                                borderRadius: BorderRadius.circular(20.0),
+                                border:Border.all(color: Colors.tealAccent,width: 3.0)
                             ),
                             child: Column(
                               children: [
@@ -167,7 +158,7 @@ class _MatchingState extends State<Matching> {
                                   style: TextStyle(
                                     fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.black,
+                                    color: Colors.pinkAccent.shade700,
                                   ),
 
                                 ),
@@ -178,6 +169,7 @@ class _MatchingState extends State<Matching> {
                                   '$tries',
                                   style: TextStyle(
                                     fontSize: 25.0,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.w900,
                                   ),
 
@@ -200,37 +192,36 @@ class _MatchingState extends State<Matching> {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
-                           // mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                             Container(
+                              Container(
 
                                 decoration: BoxDecoration(
-                                  color: Colors.teal.shade200,
+                                  color: Colors.white,
                                   borderRadius: BorderRadius.circular(50.0),
 
                                 ),
                                 height: 60.0,
                                 width: 60.0,
                                 child: IconButton(onPressed:(){
+
                                   Navigator.push(context,
-                                      MaterialPageRoute(builder: (context){
-                                        return Matching21();
-                                      }));
-
-
+                                      MaterialPageRoute(builder:(context){
+                                        return Matching();
+                                      } ));
 
                                 }, icon:Icon(
                                   Icons.arrow_back,
                                   size:30.0,
-                                  color: Colors.white,
+                                  color: Colors.pinkAccent.shade700,
 
                                 ),),
                               ),
-                              SizedBox(width: 200.0,),
+                              SizedBox(width: 350.0,),
 
                               SizedBox(
-                                width:400.0,
-                                height:500.0,
+                                width:335.0,
+                                height:335.0,
                                 child: GridView.builder(
 
                                     itemCount: _game.gameImg!.length ,
@@ -263,14 +254,13 @@ class _MatchingState extends State<Matching> {
                                               print(true);
                                               _game.matchecheck.clear();
                                               score+=100;
-                                              player.play(AssetSource('Exanswer.mp3'));
-                                              if( score==600){
+                                              player.play(AssetSource('correct3.mp3'));
+                                              if( score==700){
                                                 Navigator.push(context,
-                                                    MaterialPageRoute(builder: (context){
-                                                      return Result3() ;
-                                                    }));
-
-                                                player.play(AssetSource('excellent.mp3'));
+                                                    MaterialPageRoute(builder:(context){
+                                                      return Result11();
+                                                    },));
+                                                player.play(AssetSource('congr5.mp3'));
                                               }
 
 
@@ -292,19 +282,20 @@ class _MatchingState extends State<Matching> {
                                           }
                                         },
                                         child:  Container(
-                                          height: 50.0,
-                                          width: 50.0,
+                                          height: 10.0,
+                                          width: 10.0,
                                           padding: EdgeInsets.all(1.0),
                                           decoration: BoxDecoration(
                                             color: Colors.white,
-                                            borderRadius: BorderRadius.circular(25.0),
-                                            border: Border.all(color: Colors.red.shade300,width: 3.0),
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(15.0),
+                                              topRight:Radius.circular(15.0),
+                                            ),
+                                            border: Border.all(color: Colors.tealAccent,width: 2.0),
                                             //borderRadius: BorderRadiusDirectional.circular(8.0),
                                             image: DecorationImage(
                                               fit: BoxFit.contain,
-                                              image: AssetImage(_game.gameImg![index]),
-
-                                            ),
+                                              image: AssetImage(_game.gameImg![index]),),
 
                                           ),
                                         ),
@@ -313,7 +304,7 @@ class _MatchingState extends State<Matching> {
 
                                     } ),
                               ),
-                              SizedBox(width: 250.0,),
+                              SizedBox(width: 350.0,),
 
 
 
@@ -329,6 +320,7 @@ class _MatchingState extends State<Matching> {
                       ),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
+
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -336,9 +328,9 @@ class _MatchingState extends State<Matching> {
                               height: 40.0,
                               width: 200.0,
                               decoration: BoxDecoration(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  borderRadius: BorderRadius.circular(15.0),
-                                  border:Border.all(color: Colors.tealAccent.shade400.withOpacity(0.25),width: 4.0)
+                                  color: Colors.blueGrey.withOpacity(0.2),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  border:Border.all(color: Colors.tealAccent,width: 2.0)
                               ),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -355,16 +347,14 @@ class _MatchingState extends State<Matching> {
                                       child: Text(
                                         'Reset',
                                         style: TextStyle(
-                                          color: Colors.red.shade200,
-                                          fontSize: 20.0,
-                                         // fontWeight: FontWeight.bold,
+                                          color: Colors.pinkAccent.shade700,
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.w900,
                                         ),
                                       )),
                                   SizedBox(width: 10.0,),
                                   Icon(
                                     Icons.refresh,
-                                    color: Colors.tealAccent.shade200,
-                                    size: 30.0,
                                   ),
                                 ],
                               ),
@@ -379,9 +369,9 @@ class _MatchingState extends State<Matching> {
                               height: 40.0,
                               width: 200.0,
                               decoration: BoxDecoration(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  borderRadius: BorderRadius.circular(15.0),
-                                  border:Border.all(color: Colors.tealAccent.shade400.withOpacity(0.25),width: 4.0)
+                                  color: Colors.blueGrey.withOpacity(0.2),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  border:Border.all(color: Colors.tealAccent,width: 2.0)
                               ),
                               child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -391,9 +381,9 @@ class _MatchingState extends State<Matching> {
                                           Text(
                                             'Time :',
                                             style: TextStyle(
-                                                color: Colors.red.shade200,
-                                                //fontWeight: FontWeight.bold,
-                                                fontSize: 20.0,
+                                                color: Colors.pinkAccent.shade700,
+                                                fontWeight: FontWeight.w900,
+                                                fontSize: 15.0
                                             ),
                                           ),
                                           SizedBox(width: 4,),
@@ -402,7 +392,7 @@ class _MatchingState extends State<Matching> {
                                             style: TextStyle(
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 20.0
+                                                fontSize: 15.0
                                             ),
                                           ),
                                         ]
@@ -412,8 +402,6 @@ class _MatchingState extends State<Matching> {
                                     ),
                                     Icon(
                                       Icons.timer_outlined,
-                                      color: Colors.tealAccent.shade200,
-                                      size: 30.0,
                                     ),]
                               ),
                             ),
@@ -434,7 +422,6 @@ class _MatchingState extends State<Matching> {
 
 
     );
-
   }
   startTimer(){
     setState(() {

@@ -4,7 +4,9 @@ import 'package:first_project/matching_3.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+import 'easy.dart';
 import 'matching_1.dart';
+import 'matching_21.dart';
 
 class Result2 extends StatefulWidget {
   const Result2({super.key});
@@ -97,7 +99,7 @@ class _Result2State extends State<Result2> {
                            Navigator.push(
                              context,
                              MaterialPageRoute(builder: (context){
-                               return HomeScreen();
+                               return Easy();
                              })
 
                            );
@@ -115,7 +117,7 @@ class _Result2State extends State<Result2> {
                          Navigator.push(
                            context,
                            MaterialPageRoute(builder:(context){
-                             return Matching();
+                             return Matching21();
                            }),);
                        } , icon:Icon(
                          Icons.arrow_forward,
